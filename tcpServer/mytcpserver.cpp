@@ -4,8 +4,8 @@
 
 MyTcpServer::MyTcpServer()
 {
-    OpeDB db;
-    db.getInstance().init();
+//    OpeDB db;
+//    db.getInstance().init();
 }
 
 MyTcpServer &MyTcpServer::getInstance()
