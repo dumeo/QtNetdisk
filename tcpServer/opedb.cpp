@@ -34,3 +34,41 @@ void OpeDB::init()
         QMessageBox::critical(NULL, "waring", "open db failed");
     }
 }
+
+bool OpeDB::handleRegist(const char *name, const char *pwd)
+{
+    qDebug() << "Handling register...";
+    if(name == NULL || pwd == NULL) return false;
+    if(m_db.open()){
+        QString sql = QString("insert into usrInfo(name, pwd) values(\'%1\',\'%2\');").arg(name).arg(pwd);
+        QSqlQuery q;
+        qDebug() << sql;
+        return q.exec(sql);
+    }
+    else{
+        QMessageBox::critical(NULL, "waring", "open db failed");
+    }
+    return false;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

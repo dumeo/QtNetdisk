@@ -28,7 +28,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_4;
+    QVBoxLayout *verticalLayout_4;
     QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
@@ -43,6 +43,8 @@ public:
     QPushButton *regist_bt;
     QSpacerItem *horizontalSpacer;
     QPushButton *cancel_bt;
+    QSpacerItem *verticalSpacer;
+    QLabel *connectionStatus_lb;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -50,11 +52,11 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(268, 303);
+        MainWindow->resize(250, 289);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        horizontalLayout_4 = new QHBoxLayout(centralwidget);
-        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        verticalLayout_4 = new QVBoxLayout(centralwidget);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_2 = new QVBoxLayout();
@@ -123,12 +125,22 @@ public:
         verticalLayout_3->addLayout(horizontalLayout_3);
 
 
-        horizontalLayout_4->addLayout(verticalLayout_3);
+        verticalLayout_4->addLayout(verticalLayout_3);
+
+        verticalSpacer = new QSpacerItem(20, 65, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_4->addItem(verticalSpacer);
+
+        connectionStatus_lb = new QLabel(centralwidget);
+        connectionStatus_lb->setObjectName(QString::fromUtf8("connectionStatus_lb"));
+        connectionStatus_lb->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_4->addWidget(connectionStatus_lb);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 268, 22));
+        menubar->setGeometry(QRect(0, 0, 250, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -147,6 +159,7 @@ public:
         login_bt->setText(QCoreApplication::translate("MainWindow", "log in", nullptr));
         regist_bt->setText(QCoreApplication::translate("MainWindow", "sign up", nullptr));
         cancel_bt->setText(QCoreApplication::translate("MainWindow", "AccDelt.", nullptr));
+        connectionStatus_lb->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
     } // retranslateUi
 
 };

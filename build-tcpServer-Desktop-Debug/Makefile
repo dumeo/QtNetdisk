@@ -1304,7 +1304,15 @@ mytcpsocket.o: ../tcpServer/mytcpsocket.cpp ../tcpServer/mytcpsocket.h \
 		../../../Qt/6.1.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
 		../../../Qt/6.1.3/gcc_64/include/QtCore/qvariant.h \
 		../../../Qt/6.1.3/gcc_64/include/QtCore/QDebug \
-		../tcpServer/protocol.h
+		../tcpServer/protocol.h \
+		../tcpServer/opedb.h \
+		../../../Qt/6.1.3/gcc_64/include/QtCore/QObject \
+		../../../Qt/6.1.3/gcc_64/include/QtSql/QSqlDatabase \
+		../../../Qt/6.1.3/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../Qt/6.1.3/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../Qt/6.1.3/gcc_64/include/QtSql/qtsql-config.h \
+		../../../Qt/6.1.3/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.1.3/gcc_64/include/QtSql/qsqlquery.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mytcpsocket.o ../tcpServer/mytcpsocket.cpp
 
 opedb.o: ../tcpServer/opedb.cpp ../tcpServer/opedb.h \

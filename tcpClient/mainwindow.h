@@ -18,6 +18,8 @@ public:
     void loadConfig();
 public slots:
     void showConnect();
+    void recvMsg();
+    void offline();
 
 private slots:
     void on_login_bt_clicked();

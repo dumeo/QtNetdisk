@@ -12,6 +12,7 @@ public:
     explicit OpeDB(QObject *parent = nullptr);
     static OpeDB& getInstance();
     void init();
+    bool handleRegist(const char* name, const char* pwd);
 
 signals:
 
